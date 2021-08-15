@@ -3,23 +3,6 @@ name: Tests
 on: [push, pull_request]
 
 jobs:
-  js:
-    name: Lint and test JavaScript
-    runs-on: 'ubuntu-latest'
-    steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint source
-        run: npm run lint
-      # - name: Run tests
-      #   run: npm run test
-      # - name: Run demo test
-      #   run: npm run test:demo
   build:
     name: Build package
     runs-on: 'ubuntu-latest'
@@ -42,8 +25,8 @@ jobs:
       - name: Upload generated files
         uses: actions/upload-artifact@v2
         with:
-          name: dash-loading-spinners
-          path: dash_loading_spinners
+          name: dash_image_gallery
+          path: dash_image_gallery
   python:
     name: Lint and test Python package
     needs: build
@@ -78,7 +61,7 @@ jobs:
         run: nox -s lint
       - uses: actions/download-artifact@v2
         with:
-          name: dash-loading-spinners
-          path: dash_loading_spinners
+          name: dash_image_gallery
+          path: dash_image_gallery
       - name: Test Python module
         run: nox -s test-${{ matrix.python-version }}
