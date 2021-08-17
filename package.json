@@ -14,11 +14,11 @@
     "build": "npm run build:js && npm run build:backends",
     "build:activated": "npm run build:js && npm run build:backends-activated"
   },
-  "author": "Brandon Andersen",
+  "author": "Brandon Andersen <>",
   "license": "MIT",
   "dependencies": {
     "ramda": "^0.26.1",
-    "react-grid-gallery": "^0.5.5",
+    "react-grid-gallery": "^0.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",

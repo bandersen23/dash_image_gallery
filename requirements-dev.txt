@@ -1,0 +1,19 @@
+# dash is required to call `build:py`
+dash[dev]>=1.15.0
+dash-bootstrap-components
+
+# formatting tools
+black
+flake8
+isort
+
+# testing
+pytest
+
+# task automation
+nox
+invoke
+
+# build
+build
+semver
